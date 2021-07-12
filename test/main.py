@@ -11,6 +11,5 @@ class MainTestCase(unittest.TestCase):
         self.assertEqual(get_streams_from_symbols({'1', '2', 'a', 'b'}), {'1@bookTicker', '2@bookTicker', 'a@bookTicker', 'b@bookTicker'})
 
 
-# I don't know what's wrong, but I can't get this one to run. I have to run the above tests manually... I will figure it out later when I learn more about Py
 if __name__ == '__main__':
     unittest.main()
