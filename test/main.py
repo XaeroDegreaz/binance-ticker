@@ -3,7 +3,7 @@ import unittest
 from src.main import parse_symbols, get_streams_from_symbols
 
 
-class MyTestCase(unittest.TestCase):
+class MainTestCase(unittest.TestCase):
     def test_parse_symbols(self):
         self.assertEqual(parse_symbols('1, 1,2,A,    B'), {'1', '2', 'a', 'b'})
 
