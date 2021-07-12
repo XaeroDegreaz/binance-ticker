@@ -1,0 +1,28 @@
+services:
+  binance-ticker:
+    build:
+      context: .
+    env_file:
+      - .env
+    environment:
+      MONGO_URL: "mongodb://mongodb"
+    depends_on:
+      - mongodb
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+  mongodb:
+    image: "mongo:4"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-data:/data/db
+volumes:
+  mongodb-data:
